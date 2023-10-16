@@ -4,6 +4,9 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   // const { data: session } = useSession();
+  const handleSignIn = async (): Promise<void> => {
+    await signIn();
+  };
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function Home() {
           </h1>
 
           <Button
-            onClick={() => signIn()}
+            onClick={() => handleSignIn()}
             btnClass="btn-secondary"
             title="Sign up"
           />
